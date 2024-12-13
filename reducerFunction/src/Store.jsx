@@ -3,11 +3,11 @@ import { createStore } from "redux";
 // making a function to use easily and also makes dynamic
 // the folloeing function is used  for adding an ddeleting task
 
-const addTask = (data) => {
+export const addTask = (data) => {
   return { type: ADD_TASK, payload: data };
 };
 
-const deleteTask = (index) => {
+export const deleteTask = (index) => {
   return {
     type: DELETE_TASK,
     payload: index,
