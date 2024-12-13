@@ -34,7 +34,7 @@ const reducerfunction = (state = initialState, action) => {
       });
       return {
         ...state,
-        task: [updatedTask],
+        task: updatedTask,
       };
 
     default:
@@ -42,7 +42,7 @@ const reducerfunction = (state = initialState, action) => {
   }
 };
 
-const store = createStore(reducerfunction);
+export const store = createStore(reducerfunction);
 console.log(store);
 
 console.log("initial", store.getState());
@@ -56,3 +56,5 @@ console.log("updated", store.getState());
 // store.dispatch({ type: DELETE_TASK, payload: 1 })
 store.dispatch(deleteTask(1));
 console.log("deleted", store.getState());
+store.dispatch(addTask("add roshanaa"))
+store.dispatch(addTask("add both"))
