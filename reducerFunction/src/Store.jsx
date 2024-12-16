@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import { composeWithDevTools } from '@redux-devtools/extension';
 
 // making a function to use easily and also makes dynamic
 // the folloeing function is used  for adding an ddeleting task
@@ -42,7 +43,7 @@ const reducerfunction = (state = initialState, action) => {
   }
 };
 
-export const store = createStore(reducerfunction);
+export const store = createStore(reducerfunction,  composeWithDevTools());
 console.log(store);
 
 console.log("initial", store.getState());

@@ -8,16 +8,15 @@ const Todo = () => {
   const state = useSelector((state) => state.task);
   const dispatch = useDispatch();
 
-
   const handleForm = (e) => {
     e.preventDefault();
-     dispatch(addTask(task));
-     return setTask("")
+    dispatch(addTask(task));
+    return setTask("");
   };
 
-  const handleDelete = (id)=>{
-    return dispatch(deleteTask(id))
-  }
+  const handleDelete = (id) => {
+    return dispatch(deleteTask(id));
+  };
 
   return (
     <>
@@ -50,7 +49,10 @@ const Todo = () => {
                     {index}: {curtask}
                   </p>
                   <button>
-                    <MdDeleteForever className="icon-style text-red-600" onClick={()=>handleDelete(index)} />
+                    <MdDeleteForever
+                      className="icon-style text-red-600"
+                      onClick={() => handleDelete(index)}
+                    />
                   </button>
                 </li>
               );
