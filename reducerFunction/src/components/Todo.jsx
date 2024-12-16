@@ -4,9 +4,9 @@ import { MdDeleteForever } from "react-icons/md";
 import { addTask, deleteTask } from "../Store";
 
 const Todo = () => {
-  const [task, setTask] = useState("");
-  const state = useSelector((state) => state.task);
-  const dispatch = useDispatch();
+  const [task, setTask] = useState(""); //state that stores input that will be displayed
+  const state = useSelector((state) => state.task);  //using useSelector to select the task from state that is defined in store.jsx
+  const dispatch = useDispatch(); //to perform action to add or delete
 
   const handleForm = (e) => {
     e.preventDefault();
